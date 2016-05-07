@@ -1,11 +1,12 @@
 $(document).ready(function () {
-	$('#btn-suces').click(function () {
-		swal({
-			title: 	"", 
-			type: 	"success"
-		});
-	})
-})
+    $('#dori').click(function () {
+        swal("Halo", "Lên google search ori and blind forest codex ra cả đống nhé! Chúc vui :D", "warning");
+    })
+    
+});
+
+
+
 
 function scrolltop() 
 {
