@@ -15,7 +15,7 @@ class ArticlesController extends Controller
     {
     	// Cac logic trien khai lay du lieu
     	
-    	$articles = Article::paginate(5);
+    	$articles = Article::orderBy('id','desc')->paginate(5);
     	return view('articles.index', compact('articles'));
     }
 

@@ -9,5 +9,5 @@
 </div>
 
 <div class="form-group">
-    {!! Form::submit($btn_name, [ 'class' => 'btn btn-primary' ]) !!}
+    {!! Form::submit($btn_name, [ 'class' => 'btn btn-success' ]) !!}
 </div>

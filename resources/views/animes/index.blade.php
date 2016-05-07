@@ -1,9 +1,9 @@
-@extends('layouts.master')
-@section('head.title')
+@extends('layouts.app')
+@section('title')
 	Animes page
-@stop
+@endsection
 
-@section('body.content')
+@section('content')
 	
 	<div class="container">
 		<div class="row">
@@ -29,4 +29,4 @@
 		</div>
 	</div>
 	
-@stop
+@endsection

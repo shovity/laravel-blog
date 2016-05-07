@@ -1,3 +1,11 @@
+body {
+	padding-top: 100px;
+}
+
+#navbar {
+	box-shadow: #555 4px 4px 10px 4px;
+}
+
 #footer {
 	margin-top: 50px;
 	padding-bottom: 35px;
@@ -6,4 +14,11 @@
 #footer .col-sm-6 {
 	padding-top: 35px;
 	border-top: 1px #cdcdcd solid;
+}
+
+#goTop {
+	display: none;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
 }

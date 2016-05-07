@@ -52,10 +52,21 @@ Route::delete('articles/{id}/delete', [
 	'as'	=> 'article.destroy',
 	'uses'	=> 'ArticlesController@destroy'
 	]);
+Route::get('games', [
+	'as'	=> 'games.index',
+	'uses'	=> 'GamesController@index'
+	]);
 
 // Anime
 
 Route::get('animes', [
 	'as'	=> 'anime.index',
 	'uses'	=> 'AnimesController@index'
+	]);
+
+Route::auth();
+
+Route::get('/home', [
+	'as'	=> 'home.index',
+	'uses'	=> 'HomeController@index'
 	]);

@@ -1,9 +1,9 @@
-@extends('layouts.master')
-@section('head.title')
+@extends('layouts.app')
+@section('title')
 Shovity | Blog | {{ $article->title }}
 @stop
 
-@section('body.content')
+@section('content')
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
@@ -15,8 +15,8 @@ Shovity | Blog | {{ $article->title }}
 
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
-			<h2>{{ $article->title }}</h2>
-			<p>{{ $article->content }}</p>
+			<h2>{!! $article->title !!}</h2>
+			<p>{!! $article->content !!}</p>
 		</div>
 	</div>
 

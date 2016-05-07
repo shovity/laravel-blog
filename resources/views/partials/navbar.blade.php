@@ -1,42 +1,54 @@
-<nav class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="{{ url('/') }}">Blog Shovity</a>
-		</div>
+<nav id="navbar" class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse navbar-ex1-collapse">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="{{ route('article.index') }}">Artiscles</a></li>
-				<li><a href="{{ route('anime.index') }}">Animes</a></li>
-			</ul>
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
-			<form class="navbar-form navbar-left" role="search">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Search">
-				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
-			</form>
+            <!-- Branding Image -->
+            <a class="navbar-brand" href="{{ url('/') }}" data-toggle="tooltip" data-placement="bottom" title="Hello ajinomoto, Ohaio...">
+               <span class="glyphicon glyphicon-home"></span> Shovity
+            </a>
+        </div>
 
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="{{ route('article.create') }}">New Articles</a></li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li><a href="#">Separated link</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div><!-- /.navbar-collapse -->
-	</div>
+        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <!-- Left Side Of Navbar -->
+            <ul class="nav navbar-nav">
+                <li @if($_SERVER["REQUEST_URI"]=="/articles") class="active" @endif><a href="{{ route('article.index') }}">Articles</a></li>
+                <li @if($_SERVER["REQUEST_URI"]=="/animes") class="active" @endif><a href="{{ route('anime.index') }}">Animes</a></li>
+            </ul>
+        
+
+            <!-- Right Side Of Navbar -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Authentication Links -->
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="{{ url('/register') }}"><span class="glyphicon glyphicon-registration-mark"></span> Register</a></li>
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="glyphicon glyphicon-user"> {{ Auth::user()->name }}
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('article.create') }}"><span class="glyphicon glyphicon-plus-sign"></span> New Article</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/logout') }}"><span class="glyphicon glyphicon-log-out"> Logout</a>
+                            </li>
+
+                          
+                        </ul>
+                    </li>
+                @endif
+            </ul>
+        </div>
+    </div>
 </nav>

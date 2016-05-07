@@ -9,5 +9,5 @@ class Anime extends Model
     protected $fillable = [
     	'name',
     	'point'
-    ]
+    ];
 }
