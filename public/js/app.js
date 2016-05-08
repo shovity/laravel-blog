@@ -2,6 +2,9 @@ $(document).ready(function () {
     $('#dori').click(function () {
         swal("Halo", "Lên google search ori and blind forest codex ra cả đống nhé! Chúc vui :D", "warning");
     })
+    $('#opp,#opp1,#opp2,#opp3,#opp4,#opp5,#opp6').click(function () {
+        swal("Surpise", "Không có gì luôn, Ngặc nhiên chưa :))", "success");
+    })
     
 });
 

@@ -45,7 +45,7 @@
                 <h1>Một câu chuyện cảm động</h1>
                 <p>Khu rừng Nibel, dưới sự che chở từ ánh sáng của Cổ Thụ Tinh Linh - Spirit Tree, vốn vô cùng tươi đẹp và là nơi sinh sống của rất nhiều loài sinh vật hiền hòa. Biến cố xảy ra khi thứ ánh sáng duy trì sự sống, sự cân bằng của khu rừng bị cướp mất. Cả khu rừng chết dần chết mòn, các yếu tố duy trì sự cân bằng vận hành một cách sai lệch gây biến đổi môi trường. Các giống loài tuyệt diệt, số ít còn sống sót thì biến chất. Khu rừng Nibel mất đi nguồn sống và trở nên tăm tối.</p>
                 <p>
-                    <a href="#" class="btn btn-primary btn-lg" style="background: none">Kham Pha</a>
+                    <a href="#" id="opp" class="btn btn-primary btn-lg" style="background: none">Khám Phá</a>
                 </p>
             </div>
         </div>
@@ -57,7 +57,7 @@
                 <h1>Lối chơi cuốn hút</h1>
                 <p>Các thử thách đi từ dễ đến khó và đòi hỏi người chơi phải thành thục những năng lực đặc biệt và kỹ năng của Ori thì mới có thể vượt qua. Bạn có thể điều khiển Ori chạy nhảy, bơi lội, bay lượn, bám tường, phóng nhanh như một tia chớp để vượt qua lũ quái vật hoặc các chướng ngại trên đường đi. Game còn có một số câu đố tuy không quá hóc búa nhưng chắc chắn cũng sẽ khiến bạn phải tốn kha khá thời gian để động não.</p>
                 <p>
-                    <a href="#" class="btn btn-success btn-lg" style="background: none">Kham Pha</a>
+                    <a href="#" id="opp1" class="btn btn-success btn-lg" style="background: none">Khám Phá</a>
                 </p>
             </div>
         </div>
@@ -69,7 +69,7 @@
                 <h1>Tuyệt mỹ - cụm từ dành cho đồ họa trong game</h1>
                 <p>Nếu hỏi bất cứ ai sau khi chơi Ori có ấn tượng sâu sắc về điều gì, câu trả lời chắc hẳn sẽ là hình ảnh và âm nhạc. Khu rừng Nibel có một vẻ đẹp đến mê người, từng chi tiết như cành cây, ngọn cỏ, hoa lá... đều được chăm chút kỹ lưỡng tạo ra một thế giới thần tiên lung linh huyền ảo mà ta khó lòng rời mắt. Mỗi một môi trường đều có nét đặc sắc riêng nhưng không xa rời khỏi tổng thể, tạo sự hài hòa và cân bằng cho cả khu rừng, khiến người chơi cảm thấy thư thái khi "dạo chơi" trong Nibel.</p>
                 <p>
-                    <a href="#" class="btn btn-info btn-lg" style="background: none">Kham Pha</a>
+                    <a href="#" id="opp2" class="btn btn-info btn-lg" style="background: none">Khám Phá</a>
                 </p>
             </div>
         </div>
@@ -81,7 +81,7 @@
                 <h1>Âm nhạc trên cả mức tuyệt vời</h1>
                 <p>Nhà soạn nhạc Gareth Coker đã xuất sắc tạo nên những giai điệu tuy nhẹ nhàng nhưng có thể đánh động lòng người. Những thanh âm dịu dàng ngân lên từng tiếng, như không vang vọng trong tai mà đang nhảy múa trong lồng ngực người nghe. Tiếng nhạc như làn gió nhẹ, như dòng suối nhỏ, một cách từ từ, khẽ cuốn đi những mệt nhọc phiền não trong cuộc sống. Phối hợp với cảnh sắc thần tiên của khu rừng Nibel lại càng thêm hoàn mỹ.</p>
                 <p>
-                    <a href="#" class="btn btn-danger btn-lg" style="background: none">Kham Pha</a>
+                    <a href="#" id="opp3" class="btn btn-danger btn-lg" style="background: none">Khám Phá</a>
                 </p>
             </div>
         </div>
@@ -93,7 +93,7 @@
                 <h1>Giá trị nhân văn sâu đậm</h1>
                 <p>Ori and the Blind Forest đề cao tình yêu thương, dùng tình yêu thương để hóa giải hận thù. Dù cho Ori của bạn có được luyện đến mức tối thượng thì đến cuối cùng, sức mạnh đó cũng không dùng để tiêu diệt "trùm cuối". Biến cố, hiểu lầm, thù hận nối tiếp nhau đem đến bi kịch, thì chính tình yêu thương, lòng vị tha, cũng từng bước, từng bước, liên kết với nhau hóa giải tất cả. Cả câu chuyện đơn giản chỉ là nêu lên triết lý gieo nhân lành thì gặt quả ngọt, sống yêu thương thì nhận lại yêu thương, nhưng chính điều đơn giản đó là thứ con người bấy lâu nay vẫn đang truy cầu mà chưa có được.</p>
                 <p>
-                    <a href="#" class="btn btn-default btn-lg" style="background: none">Kham Pha</a>
+                    <a href="#" id="opp4" class="btn btn-default btn-lg" style="background: none">Khám Phá</a>
                 </p>
             </div>
         </div>
@@ -105,7 +105,7 @@
                 <h1>Có thể bạn chưa biết</h1>
                 <p>Ori và Khu Rừng Mất Đi Ánh Sáng lấy cảm hứng từ những bộ phim hoạt hình nổi tiếng của Ghibli cụ thể là Công Chúa Momonoke (Momonoke Hime) và My Neighbor Totoro (Tonari no Totoro), vì thế các nhân vật trong Ori có nét tương đồng với các nhân vật của Ghibli. Ori được xây dựng hình tượng từ các tinh linh của núi rừng trong phim Công Chúa Momonoke còn Naru được xây dụng từ hình mẫu nhân vật Totoro. Ori là một tinh linh ánh sáng phi giới tính, trong tiếng Nhật từ này nghĩa là "cơ hội" cũng là để chỉ Ori chính là cơ hội cuối cùng của khu rừng. Naru trong tiếng Nhật nghĩa là "ra quả" cũng là để chỉ việc Naru ngày ngày hái quả nuôi Ori. Kuro nghĩa là "đen" cũng là để chỉ thế lực đen tối, phản diện trong trò chơi.</p>
                 <p>
-                    <a href="#" class="btn btn-danger btn-lg" style="background: none">Kham Pha</a>
+                    <a href="#" id="opp5" class="btn btn-danger btn-lg" style="background: none">Khám Phá</a>
                 </p>
             </div>
         </div>
