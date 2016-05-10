@@ -12,4 +12,9 @@ class PagesController extends Controller
     {
     	return redirect()->route('home.index');
     }
+
+    public function kick($alert = "")
+    {
+    	return view('layouts.kick', compact('alert'));
+    }
 }

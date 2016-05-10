@@ -19,8 +19,11 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li @if($_SERVER["REQUEST_URI"]=="/articles") class="active" @endif><a href="{{ route('article.index') }}">Articles</a></li>
-                <li @if($_SERVER["REQUEST_URI"]=="/animes") class="active" @endif><a href="{{ route('anime.index') }}">Animes</a></li>
+                <li @if(Request::is("*article*")) class="active" @endif><a href="{{ route('article.index') }}">Articles</a></li>
+
+                <li @if(Request::is("*anime*")) class="active" @endif><a href="{{ route('anime.index') }}">Animes</a></li>
+
+                <li @if(Request::is("*master*")) class="active" @endif><a href="{{ route('master.index') }}">Master</a></li>
             </ul>
         
 

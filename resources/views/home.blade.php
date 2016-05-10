@@ -22,7 +22,7 @@
 @endsection
 
 @section('content')
-<div id="carousel-id" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false" data-wrap="true">
+<div id="carousel-id" class="carousel slide" data-ride="carousel" data-interval="7000" data-pause="false" data-wrap="true">
 
     <!-- Indicators May cai dau cham -->
     <ol class="carousel-indicators">

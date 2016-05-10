@@ -14,18 +14,6 @@ Create new articles
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
 
-			<!-- Bao loi input -->
-			@if (count($errors) > 0)
-			<div class="alert alert-danger">
-				<strong>Whoops!</strong> There were some problems with your input. <br><br>
-				<ul>
-					@foreach ($errors->all() as $e)
-						<li>{{ $e }}</li>
-					@endforeach
-				</ul>
-			</div>
-			@endif
-
 			{!! Form::model($article, [
                     'route' => [ 'article.update', $article->id ],
                     'method' => 'PUT',
