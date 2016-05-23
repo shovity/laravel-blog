@@ -48,7 +48,6 @@
 					    <button class="btn btn-success">Update <span class="glyphicon glyphicon-refresh"></span></button>
 					</div>
 
-
 				{!! Form::close() !!}
 			</div>
 		</div>

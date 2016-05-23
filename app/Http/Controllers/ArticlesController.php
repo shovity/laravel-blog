@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Response;
 use App\Article;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\ArticleFormRequest;
@@ -70,5 +71,16 @@ class ArticlesController extends Controller
         $article = Article::find($id);
         $article->delete();
         return redirect()->route('article.index');
+    }
+
+    public function getjson($id = -1)
+    {
+        if($id == -1) {
+            $articles = Article::all();
+        }
+        else {
+            $articles = Article::find($id);
+        }
+        return Response()->json($articles);
     }
 }

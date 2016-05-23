@@ -16,42 +16,53 @@ Route::get('/', [
 	'uses'	=> 'PagesController@index'
 	]);
 
-Route::get('/articles', [
+
+//====================================================== Articles area
+Route::group(['prefix' => 'articles'], function ()
+{
+	Route::get('/', [
 	'as'	=> 'article.index',
 	'uses'	=> 'ArticlesController@index'
 	]);
 
+	Route::get('/create', [
+		'as'	=> 'article.create',
+		'uses'	=> 'ArticlesController@create'
+		]);
 
-Route::get('/articles/create', [
-	'as'	=> 'article.create',
-	'uses'	=> 'ArticlesController@create'
-	]);
+	Route::post('', [
+		'as'	=> 'article.store',
+		'uses'	=> 'ArticlesController@store'
+		]);
 
-Route::post('/articles', [
-	'as'	=> 'article.store',
-	'uses'	=> 'ArticlesController@store'
-	]);
+	Route::get('/{id}', [
+		'as'	=> 'article.show',
+		'uses'	=> 'ArticlesController@show'
+		])->where(['id' => '[0-9]+']);
 
-Route::get('/articles/{id}', [
-	'as'	=> 'article.show',
-	'uses'	=> 'ArticlesController@show'
-	])->where(['id' => '[0-9]+']);
-
-Route::get('/articles/{id}/edit', [
-	'as'	=> 'article.edit',
-	'uses'	=>	'ArticlesController@edit'
-	])->where(['id' => '[0-9]+']);
+	Route::get('/{id}/edit', [
+		'as'	=> 'article.edit',
+		'uses'	=>	'ArticlesController@edit'
+		])->where(['id' => '[0-9]+']);
 
 
-Route::put('/articles/{id}/update', [
-	'as'	=> 'article.update',
-	'uses'	=>	'ArticlesController@update'
-	])->where(['id' => '[0-9]+']);
+	Route::put('/{id}/update', [
+		'as'	=> 'article.update',
+		'uses'	=>	'ArticlesController@update'
+		])->where(['id' => '[0-9]+']);
 
-Route::delete('/articles/{id}/delete', [
-	'as'	=> 'article.destroy',
-	'uses'	=> 'ArticlesController@destroy'
-	]);
+	Route::delete('/{id}/delete', [
+		'as'	=> 'article.destroy',
+		'uses'	=> 'ArticlesController@destroy'
+		]);
+
+	// Get json articles
+	Route::get('getjson/{id?}', [
+		'as'	=> 'article.getJson',
+		'uses'	=> 'ArticlesController@getJson'
+		]);
+});
+
 Route::get('/games', [
 	'as'	=> 'games.index',
 	'uses'	=> 'GamesController@index'
@@ -71,8 +82,8 @@ Route::get('/home', [
 	'uses'	=> 'HomeController@index'
 	]);
 
-// Master area
-Route::group(['prefix' => 'master', 'middleware' => 'master'], function ()
+//======================================================================= Master area
+Route::group(['prefix' => 'master'], function ()
 {
 	Route::get('/', [
 	'as'	=> 'master.index',

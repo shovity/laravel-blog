@@ -9,6 +9,11 @@ use App\User;
 
 class MasterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('master');
+    }
+
     public function index()
     {
     	$users = User::all();
