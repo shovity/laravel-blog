@@ -14,14 +14,8 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id'); //Khoa id tu tang
-
-            // Tieu de
             $table->string('title');
-
-            // Noi dung
             $table->text('content');
-
-
             $table->timestamps();   // created_at, updated_at
         });
     }

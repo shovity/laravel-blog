@@ -23,13 +23,17 @@
 <body id="app-layout">
 
     @section("navbar")
-    @include("partials.navbar")
+        @include("partials.navbar")
+    @show
+
+    @section('left_menu')
+        @include('partials.left_menu')
     @show
 
     @yield('content')
 
     <!-- go_top -->
-    <a href="#" id="goTop"  style="font-size: 40px" data-toggle="tooltip" title="Tên lửa đê :D"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+    <a href="#" id="goTop" data-toggle="tooltip" title="Tên lửa đê :D"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
 
     <!--include script -->
     <script src="/js/jquery.min.js"></script>
@@ -39,7 +43,7 @@
     <!-- Bao loi input -->
 
     @section("footer")
-    @include("partials.footer")
+        @include("partials.footer")
     @show
 
     @if (count($errors) > 0)

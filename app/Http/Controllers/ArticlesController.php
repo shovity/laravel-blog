@@ -81,6 +81,6 @@ class ArticlesController extends Controller
         else {
             $articles = Article::find($id);
         }
-        return Response()->json($articles);
+        return response()->json($articles,200,[], JSON_UNESCAPED_UNICODE);
     }
 }

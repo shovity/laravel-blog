@@ -7,6 +7,8 @@ Shovity | Blog | {{ $article->title }}
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
+			{{ $article->title }}
+
 			<a href="{{ url('/') }}" class="btn btn-link">
 				<span class="glyphicon glyphicon-chevron-left"></span>Back to Home
 			</a>

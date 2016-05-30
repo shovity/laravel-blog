@@ -21,7 +21,7 @@ class Master
         {
             return redirect('/login');
         } 
-        else if(Auth::user()->lvl < 99)
+        else if(Auth::user()->level < 99)
         {
             return redirect()->route('kick', "Only my master can access here? Get out, please...");
         }

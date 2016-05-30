@@ -21,4 +21,39 @@ body {
 	position: fixed;
 	bottom: 50px;
 	right: 50px;
+	font-size: 50px;
+	color: #B62025;
+}
+
+#left_menu {
+	position: fixed;
+	transition: all .3s;
+	left: -35px;
+
+}
+
+#left_menu:hover {
+	left: 0px;
+}
+
+#left_menu a {
+	transition: all .3s;
+	width: 80px;
+	padding: 15px 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.38);
+	border-radius: 0;
+}
+
+#left_menu a:hover {
+	width: 100px;
+	margin-left: 20px;
+}
+
+#left_menu img {
+	width: 30px;
+	height: 30px;
+}
+
+#left_menu .btn-primary  .btn-danger {
+	padding: 10px;
 }

@@ -104,13 +104,18 @@ Route::group(['prefix' => 'master'], function ()
 		'uses'	=> 'MasterController@userEdit']);
 });
 
-Route::get('profile', ['middleware' => 'auth.basic', function() {
+Route::get('/profile', ['middleware' => 'auth.basic', function() {
 	// Neu chua dang nhap yeu cau nhap mat khau bang cua so bat len
     return "ok";
 }]);
 
-Route::get('kick/{alert?}', [
+Route::get('/kick/{alert?}', [
 	'as'	=> 'kick',
 	'uses'	=> 'PagesController@kick'
 	]);
+
+Route::get('/v/{name}', ['middleware' => 'master', function ($name)
+{
+	return view($name);
+}]);
 
