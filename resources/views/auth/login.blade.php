@@ -59,7 +59,7 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-                                <a href="https://www.facebook.com/dialog/oauth?client_id=611579029008726&redirect_uri=http://localhost:8000/facebook/getcode">Login FB</a>
+                                <a href="/facebook/getcode">Login FB</a>
                             </div>
                         </div>
                     </form>

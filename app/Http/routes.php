@@ -120,6 +120,4 @@ Route::get('/v/{name}', ['middleware' => 'master', function ($name)
 }]);
 
 //====================== Login with facebook
-Route::get('/facebook/getcode', 'PagesController@facebookGetCode');
-Route::get('/graph/{p}', 'PagesController@graph');
-
+Route::get('/facebook/getcode', 'PagesController@getCodeFb');

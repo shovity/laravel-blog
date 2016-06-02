@@ -20,17 +20,29 @@ class PagesController extends Controller
     	return view('layouts.kick', compact('alert'));
     }
 
-    public function facebookGetCode(Request $request)
+    public function getCodeFb(Request $request)
     {
-	    $app_id = "611579029008726";
-	    $app_secret = "19807f794df8631d766e848ddd17d4cb";
-	    $redirect_uri = urlencode("http://localhost:8000/facebook/getcode");
+    	$host_name = $_SERVER['HTTP_HOST']; 				// localhost:8000
+    	$app_id = "611579029008726";						// ID app facebok
+	    $app_secret = "19807f794df8631d766e848ddd17d4cb";	// Mat khau app facebook
+	    $redirect_uri = urlencode("http://$host_name/facebook/getcode");		// Route fb se tra ve kem code
 
-	    // Get code value
-    	$code = $request->input('code');		// Lay bien get chen thanh URL
+	    // Url gui cho fb de lay code neu chua co
+	    $url_init = 'http://www.facebook.com/dialog/oauth?client_id='.$app_id.'&redirect_uri='.$redirect_uri;
+
+    	if($request->input('code') == null) {
+    		return redirect($url_init);
+    	} else $code = $request->input('code');
 
     	// Get access token info
-	    $facebook_access_token_uri = "https://graph.facebook.com/oauth/access_token?client_id=$app_id&redirect_uri=$redirect_uri&client_secret=$app_secret&code=$code";
+	    $facebook_access_token_uri = 
+	    "https://graph.facebook.com/oauth/access_token?".
+	    "client_id=$app_id".
+	    "&redirect_uri=$redirect_uri".
+	    "&client_secret=$app_secret".
+	    "&code=$code";
+
+	    // Lay response tu link $facebook_access_token_uri tra ve
 	    $ch = curl_init();
 	    curl_setopt($ch, CURLOPT_URL, $facebook_access_token_uri);
 	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -39,20 +51,21 @@ class PagesController extends Controller
 	    $response = curl_exec($ch);
 	    curl_close($ch);
 
-	    // Get access token
+	    // Tach' lay access token
 	    $access_token = str_replace('access_token=', '', explode("&", $response)[0]);
 
 	    // Get user infomation
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, "https://graph.facebook.com/me?access_token=$access_token");
+		curl_setopt($ch, CURLOPT_URL, "https://graph.facebook.com/me?&access_token=$access_token");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 
 		$response = curl_exec($ch);
 		curl_close($ch);
+
 		$user = json_decode($response);
 
-		list($fisrtName) = explode(" ", $user->name);  // Khong dung split nhaaaaaaaaaaaaaaaaaaaaaaaaa
+		list($fisrtName) = explode(" ", $user->name);  // explode, khong phai split nhu trong js
 
 		// Them vao users neu chua ton tai
 		$users = User::all();
@@ -72,39 +85,5 @@ class PagesController extends Controller
 
 		Auth::attempt(['email' => $user->id.'@facebook.com', 'password' => 'shovity123'], true);
 		return redirect()->route('home.index');
-    }
-
-    public function graph($param, Request $request)
-    {
-    	$app_id = "611579029008726";
-	    $app_secret = "19807f794df8631d766e848ddd17d4cb";
-	    $redirect_uri = urlencode("http://localhost:8000/graph/$param");
-
-    	$url_init = 'http://www.facebook.com/dialog/oauth?client_id='.$app_id.'&redirect_uri='.$redirect_uri;
-
-    	// Create or get token
-    	if($request->input('code')) {
-    		$code = $request->input('code');
-    	} else {
-    		return redirect($url_init);
-    	}
-
-	    // Get code value
-    	// Lay bien get chen thanh URL
-
-    	// Get access token info
-	    $facebook_access_token_uri = "https://graph.facebook.com/oauth/access_token?client_id=$app_id&redirect_uri=$redirect_uri&client_secret=$app_secret&code=$code";
-	    $ch = curl_init();
-	    curl_setopt($ch, CURLOPT_URL, $facebook_access_token_uri);
-	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-
-	    $response = curl_exec($ch);
-	    curl_close($ch);
-
-	    // Get access token
-	    $access_token = str_replace('access_token=', '', explode("&", $response)[0]);
-
-	    return redirect('https://graph.facebook.com/'.$param.'?access_token='.$access_token);
     }
 }
