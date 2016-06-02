@@ -31,7 +31,7 @@
 							<td>{{$user->name}}</td>
 							<td>{{$user->email}}</td>
 							<td>{{$user->created_at}}</td>
-							<td>{{$user->lvl}}</td>
+							<td>{{$user->level}}</td>
 							<td>
 								<a href="{{ route('user.remove', $user->id) }}" class="glyphicon glyphicon-remove text-danger" data-toggle="tooltip" title="Remove user {{$user->name}}"></a>
 							</td>

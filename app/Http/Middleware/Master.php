@@ -19,11 +19,11 @@ class Master
 
         if (Auth::guest())
         {
-            return redirect('/login');
+            return redirect()->route('kick', "You must login befor access this page. Login, please...");
         } 
         else if(Auth::user()->level < 99)
         {
-            return redirect()->route('kick', "Only my master can access here? Get out, please...");
+            return redirect()->route('kick', "Only my master can access here. Get out, please...");
         }
         
         return $next($request);

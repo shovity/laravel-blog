@@ -41,7 +41,7 @@ class MasterController extends Controller
     			'name'			=> $request->name,
     			'email'			=> $request->email,
     			'created_at'	=> $request->created_at,
-    			'lvl'			=> $request->lvl
+    			'level'			=> $request->level
     		]);
     	return redirect()->route('master.index');
     }

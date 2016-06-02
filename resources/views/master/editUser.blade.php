@@ -40,8 +40,8 @@
 					</div>
 
 					<div class="form-group">
-					    {!! Form::label('lvl', 'Level', [ 'class' => 'control-label' ]) !!}
-					    {!! Form::number('lvl', null, [ 'id' => 'lvl', 'class' => 'form-control', 'required' => 'true' ]) !!}
+					    {!! Form::label('level', 'level', [ 'class' => 'control-label' ]) !!}
+					    {!! Form::number('level', null, [ 'id' => 'level', 'class' => 'form-control', 'required' => 'true' ]) !!}
 					</div>
 
 					<div class="form-group">

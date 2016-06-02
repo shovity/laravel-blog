@@ -79,7 +79,7 @@ Route::auth();
 
 Route::get('/home', [
 	'as'	=> 'home.index',
-	'uses'	=> 'HomeController@index'
+	'uses'	=> 'PagesController@index'
 	]);
 
 //======================================================================= Master area
@@ -118,4 +118,8 @@ Route::get('/v/{name}', ['middleware' => 'master', function ($name)
 {
 	return view($name);
 }]);
+
+//====================== Login with facebook
+Route::get('/facebook/getcode', 'PagesController@facebookGetCode');
+Route::get('/graph/{p}', 'PagesController@graph');
 

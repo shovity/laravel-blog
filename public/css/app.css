@@ -29,6 +29,7 @@ body {
 	position: fixed;
 	transition: all .3s;
 	left: -35px;
+	top:30vh;
 
 }
 
